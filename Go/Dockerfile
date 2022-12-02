@@ -19,7 +19,7 @@ RUN apt-get install -y build-essential
 WORKDIR /home
 
 # Download compiler repository
-RUN git clone --single-branch --branch main git@github.com:Freesoul1982/go-cross-compile-library.git
+RUN git clone --single-branch --branch main https://github.com/Freesoul1982/go-cross-compile-library.git
 
 # Download ndk
 RUN wget https://dl.google.com/android/repository/android-ndk-r23c-linux.zip

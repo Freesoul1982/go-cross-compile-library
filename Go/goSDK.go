@@ -9,12 +9,12 @@ func GoCrossCompileExample(stringValue *C.char, intValue C.int, resultSize *C.in
 	goString := C.GoString(stringValue)
 
 	//Converting
-	goInt := C.GoInt(intValue)
+	goInt := int(intValue)
 	println("Received String: ", goString)
 	println("Received Int: ", goInt)
 	newGoString := "Go" + goString
 	errorString := "go error"
-	*error = C.CString(errorString)
+	error = C.CString(errorString)
 	*resultSize = C.int(len(newGoString))
 
 	result := C.CString(newGoString)
